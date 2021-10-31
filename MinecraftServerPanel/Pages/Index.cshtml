@@ -1,8 +1,20 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "Server Administration";
 }
 
-<div>
-</div>
+<section class="content">
+    <h1>Vault Hunters Server</h1>
+
+    @if (@Model.ServerStatus)
+    {
+        <p>Server is currently running</p>
+        <button class="button" type="button">Stop Server</button>
+    }
+    else
+    {
+        <p>Server is offline</p>
+        <button class="button" type="button">Start Server</button>
+    }
+</section>
